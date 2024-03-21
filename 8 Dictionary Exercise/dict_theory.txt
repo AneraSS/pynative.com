@@ -1,0 +1,93 @@
+CREATING DICTIONARY
+# create a dictionary using {}
+person = {"name": "Jessa", "country": "USA", "telephone": 1178}
+print(person)
+# output {'name': 'Jessa', 'country': 'USA', 'telephone': 1178}
+
+# create a dictionary using constructor dict()
+person = dict({"name": "Jessa", "country": "USA", "telephone": 1178})
+print(person)
+# output {'name': 'Jessa', 'country': 'USA', 'telephone': 1178}
+
+# create a dictionary from sequence having each item as a pair
+person = dict([("name", "Mark"), ("country", "USA"), ("telephone", 1178)])
+print(person)
+
+# create dictionary with mixed keys keys
+# first key is string and second is an integer
+sample_dict = {"name": "Jessa", 10: "Mobile"}
+print(sample_dict)
+# output {'name': 'Jessa', 10: 'Mobile'}
+
+# create dictionary with value as a list
+person = {"name": "Jessa", "telephones": [1178, 2563, 4569]}
+print(person)
+# output {'name': 'Jessa', 'telephones': [1178, 2563, 4569]}
+
+---------------------------------------------------------------------------------
+ACCESSING ELEMENTS
+# create a dictionary named person
+person = {"name": "Jessa", "country": "USA", "telephone": 1178}
+
+# access value using key name in []
+print(person['name'])
+# Output 'Jessa'
+
+#  get key value using key name in get()
+print(person.get('telephone'))
+# Output 1178
+---------------------------------------------------------------------------------
+.items()    - gives key-item pairs (list of tuples)
+.keys()     - returns keys (list)
+.values()   - returns values (list)
+---------------------------------------------------------------------------------
+ITERATING
+- using .keys()
+    for key in person:
+        print(key, ':', person[key])    => returns key-value pairs, as: "key" : "value"
+- using .items()
+    for key_value in person.items():
+        # first is key, and second is value
+        print(key_value[0], key_value[1])   => returns key-value pairs, as: "key" "value"
+---------------------------------------------------------------------------------
+DICT LENGTH
+len(my_dict) => will return number of pairs
+---------------------------------------------------------------------------------
+ADDING ITEMS TO DICT
+1)
+    my_dict["weight"] = 50
+2)
+    my_dict.update({"height": 6, "color": "blue")
+3)
+    my_dict.update([("city", "Texas"), ("company", "Google",)])
+---------------------------------------------------------------------------------
+SET DEFAULT VALUE TO A KEY
+.setdefault()
+= In case the key doesn’t exist already, then the key will be inserted into the dictionary, and the value
+    becomes the default value, and None will be inserted if a value is not mentioned
+
+    my_dict.setdefault("key_name", "value_value") => "key_name" : "value_value"
+    my_dict.setdefault("key_name") => "key_name" : None
+---------------------------------------------------------------------------------
+MODIFY VALUES
+1) using key name
+    my_dict[key] = "new_value"
+
+2) using .update()
+    my_dict.update({"key":"new_value"})
+---------------------------------------------------------------------------------
+REMOVING VALUES
+1) pop(key[,d])
+    Return and removes the item with the key and return its value. If the key is not found, it raises KeyError.
+
+2) popitem()
+    Return and removes the last inserted item from the dictionary. If the dictionary is empty, it raises KeyError.
+
+3) del key
+    The del keyword will delete the item with the key that is passed
+
+4) clear()
+    Removes all items from the dictionary. Empty the dictionary
+
+5) del dict_name
+    Delete the entire dictionary
